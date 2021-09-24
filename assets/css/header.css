@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/* ---------- seção do css do header ---------- */
+header {
+  padding: 0 25px;
+  width: 100%;
+  background: var(--secundary-color);
+  box-shadow: 0px 0px 15px -2px #555555;
+  -webkit-box-shadow: 0px 0px 15px -2px #555555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.header__content .logo {
+  width: 30%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media (max-width: 375px) {
+  .header__content .logo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 35px;
+  }
+}
+
+.header__content .navbar {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__content .navbar .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.header__content .navbar .menu .menu-item a {
+  color: var(--light-gray);
+  margin-left: 25px;
+}
+
+.header__content .navbar .menu .menu-item:hover .submenu {
+  height: 300px;
+  color: #000;
+  background: #fff;
+}
+
+.header__content .navbar .menu .menu-item .submenu {
+  overflow: hidden;
+  position: absolute;
+  width: 190px;
+  text-align: center;
+  height: 0px;
+  top: 99px;
+  left: -35px;
+  -webkit-transition: height ease .5s;
+  transition: height ease .5s;
+}
+
+.header__content .navbar .menu .menu-item .submenu:hover {
+  overflow: visible;
+}
+
+.header__content .navbar .menu .menu-item .submenu li {
+  z-index: 9;
+  background: #fff;
+  position: relative;
+}
+
+.header__content .navbar .menu .menu-item .submenu li a {
+  margin-left: 0;
+}
+
+.header__content .navbar .menu .menu-item .submenu li .submenu_menu {
+  position: absolute;
+  top: 0;
+  right: -190px;
+  width: 100%;
+  border-left: 1px solid #ddd;
+}
+
+.header__content .navbar .menu .menu-item .submenu li:hover {
+  background: #EBEBEB;
+}
+
+.header__content .navbar .menu .menu-item .submenu li::after {
+  content: "";
+  width: 170px;
+  height: 1px;
+  background-color: #EBEBEB;
+  left: 10px;
+}
+
+.header__content .navbar .menu li {
+  padding: 40px 0;
+  position: relative;
+  font-family: var(--font-family-futura);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.header__content .navbar .menu li::after {
+  content: "";
+  height: 0;
+  width: 120px;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.header__content .navbar .menu li:hover::after {
+  height: 5px;
+}
+
+@media (max-width: 375px) {
+  .header__content .navbar {
+    display: none;
+  }
+}
+
+/* FINAL DA SEÇÃO DO HEADER */
+.navbar-mobile {
+  display: none;
+}
+
+.navbar-mobile button {
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 375px) {
+  .navbar-mobile {
+    display: block;
+    position: relative;
+    top: 30px;
+  }
+  .navbar-mobile ul {
+    position: absolute;
+    background-color: #fff;
+    left: -999px;
+    top: 50px;
+    z-index: 99;
+    height: 100vh;
+    width: calc(100vw - 75px);
+    -webkit-box-shadow: 0px 0px 15px -6px #555555;
+            box-shadow: 0px 0px 15px -6px #555555;
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+  }
+  .navbar-mobile ul li {
+    padding: 15px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  .navbar-mobile ul li a {
+    color: #555555;
+    font-family: var(--font-family-futura);
+    text-transform: uppercase;
+  }
+}
+/*# sourceMappingURL=header.css.map */
